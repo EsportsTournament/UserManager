@@ -13,8 +13,6 @@ import {
   UI_ROOT_URI,
 } from "./config";
 
-const port = 4000;
-
 const app = express();
 
 app.use(
@@ -146,9 +144,12 @@ app.get("/auth/me", (req, res) => {
   }
 });
 
+
+app.get('/', (req, res) => { res.json({ msg: 'Meta Classic User Manager is up and live.' }) })
+
 function main() {
-  app.listen(port, () => {
-    console.log(`App listening http://localhost:${port}`);
+  app.listen(8998, () => {
+    console.log(`Express is serving.`);
   });
 }
 
