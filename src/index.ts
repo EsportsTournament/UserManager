@@ -148,8 +148,8 @@ app.get("/auth/me", (req, res) => {
 app.get('/', (req, res) => { res.json({ msg: 'Meta Classic User Manager is up and live.' }) })
 
 function main() {
-  app.listen(8998, () => {
-    console.log(`Express is serving.`);
+  app.listen(process.env.PORT || 4000, () => {
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
   });
 }
 
