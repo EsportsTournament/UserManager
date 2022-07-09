@@ -4,6 +4,6 @@ export const GOOGLE_CLIENT_ID =
 export const GOOGLE_CLIENT_SECRET =
   process.env.GOOGLE_CLIENT_SECRET || "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";
 export const SERVER_ROOT_URI = "http://localhost:4000";
-export const UI_ROOT_URI = "http://localhost:3000";
+export const UI_ROOT_URI = "http://metclan.xyz/";
 export const JWT_SECRET = "open_token";
 export const COOKIE_NAME = "auth_token";
