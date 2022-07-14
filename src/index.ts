@@ -121,19 +121,23 @@ app.get(`/${redirectURI}`, async (req, res) => {
     });
 
   const token = jwt.sign(googleUser, JWT_SECRET);
-
+    // setting cookie
+    console.log('setting cookie: ', token);
+    
   res.cookie(COOKIE_NAME, token, {
     maxAge: 900000,
     httpOnly: true,
     secure: false,
   });
-
+  // redirecting
+  console.log('redirecting');
+  
   res.redirect(UI_ROOT_URI);
 });
 
 // Getting the current user
 app.get("/auth/me", (req, res) => {
-  console.log("get me");
+  console.log("get me",req.cookies[COOKIE_NAME]);
   try {
     const decoded = jwt.verify(req.cookies[COOKIE_NAME], JWT_SECRET);
     console.log("decoded", decoded);
