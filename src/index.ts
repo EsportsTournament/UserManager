@@ -126,7 +126,8 @@ app.get(`/${redirectURI}`, async (req, res) => {
     
   res.cookie(COOKIE_NAME, token, {
     maxAge: 900000,
-    httpOnly: true,
+    // httpOnly: true,
+    sameSite: "none",
     secure: true,
   });
   // redirecting
